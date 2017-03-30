@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MySchedule LHU</string>
+    <string name="action_settings">Settings</string>
+    <string name="course">COURSE CODE&#10;TITLE</string>
+    <string name="time">TIME</string>
+    <string name="title">TITLE</string>
+    <string name="building">BUILDING</string>
+    <string name="prof">PROFESSOR</string>
+    <string name="classn">COMM100&#10;8:00 - 9:00 AM</string>
+</resources>

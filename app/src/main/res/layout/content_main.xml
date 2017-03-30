@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.vai9105.sched.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TabHost
+            android:layout_width="394dp"
+            android:layout_height="439dp"
+            android:id="@+id/tabs"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/Monday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:stretchColumns="*">
+
+
+                            <TableRow
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:textAlignment="center"
+                                >
+
+                                <TextView
+                                    android:id="@+id/column1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/time"
+                                    android:textAlignment="center"
+                                    android:textStyle="normal|bold" />
+
+                                <TextView
+                                    android:id="@+id/column2"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/course"
+                                    android:padding="10dip"
+                                    android:textAlignment="center"
+                                    android:textStyle="normal|bold" />
+
+
+
+                                <TextView
+                                    android:id="@+id/column4"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/prof"
+                                    android:textAlignment="center"
+                                    android:textStyle="normal|bold" />
+
+                                <TextView
+                                    android:id="@+id/column5"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/building"
+                                    android:textAlignment="center"
+                                    android:textStyle="normal|bold" />
+                            </TableRow>
+
+                            <TableRow
+
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:textAlignment="center">
+
+                                <TextView
+
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="8:00 AM"
+                                    android:textAlignment="center" />
+
+                                <TextView
+
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="COMM100"
+                                    android:textAlignment="center" />
+
+                                <Button
+                                    android:id="@+id/prof"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Dr. Jason Bronner"
+                                    android:background="@android:color/background_light"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:textStyle="normal|italic"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="false" />
+
+                            </TableRow>
+
+
+
+                            <TableRow
+
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"/>
+                                <TextView
+
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="9:00 AM"
+                                    android:textAlignment="viewStart" />
+
+                            <TableRow
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+                                <TextView
+
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="10:00 AM"
+                                    />
+                        </TableLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/edit1"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Tuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:text="COMM100&#10;8:00 - 9:00 AM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/button3" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:text="COMP450&#10;10:00 - 11:00 AM"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Wednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/text"
+                            android:text="Wednesday"/>
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
