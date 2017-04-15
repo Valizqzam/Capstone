@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+//Version of Android Annotations
+def AAVersion = '4.0.0'
 
 android {
     compileSdkVersion 25
@@ -9,6 +13,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,6 +21,24 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions{
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+
+    }
+    configurations.compile {
+        exclude module: 'spring-core'
+        exclude module: 'spring-web'
+        exclude module: 'commons-logging'
     }
 }
 
@@ -27,4 +50,24 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
     testCompile 'junit:junit:4.12'
+
+    //Libs
+    compile files('libs/commons-io-2.5.jar')
+
+    //support for multidexing gradle files
+    compile 'com.android.support:multidex:1.0.1'
+
+    //Android Annotations --AAVersion is the variable defined up ton
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+
+    //Spring -- Restful services
+    apt "org.androidannotations:rest-spring:$AAVersion"
+    compile "org.androidannotations:rest-spring-api:$AAVersion"
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+    compile 'org.springframework.android:spring-android-auth:1.0.1.RELEASE'
+    compile 'org.springframework.android:spring-android-core:1.0.1.RELEASE'
+
+    //Other -- used to convert GSON to JSON
+    compile 'org.immutables:gson:2.1.3'
 }
